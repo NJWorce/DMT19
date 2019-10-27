@@ -1,7 +1,6 @@
 {
   "name": "DMT19",
   "version": "1.0.0",
-
   "repository": "https://github.com/NJWorce/DMT19",
   "main": "app.js",
   "private": true,
