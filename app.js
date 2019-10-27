@@ -11,9 +11,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 app.set('trust proxy', true);
 
+app.use("/public", express.static(path.join(__dirname + '/public')));
+
 // Redirect root to ulta.html
 app.get('/', (req, res) => {
-    res.redirect('ulta.html');
+    res.sendFile(path.join(__dirname+'/ulta.html'));
+});
+
+app.get('/demo', (req, res) => {
+    res.sendFile(path.join(__dirname+'/mic.html'));
 });
 
 // Basic 404 handler
