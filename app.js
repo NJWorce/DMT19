@@ -7,12 +7,13 @@ const config = require('./config');
 const app = express();
 
 app.disable('etag');
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 app.set('trust proxy', true);
 
 // Redirect root to ulta.html
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname+'/ulta.html'));
+    res.redirect('ulta.html');
 });
 
 // Basic 404 handler
